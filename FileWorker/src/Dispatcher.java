@@ -54,7 +54,6 @@ class FileAdditionalCommands{
 class FileMethods{
 	
 	private static int amount = 0;
-//	private static int uniqueAmount = 0;
 	private static String mainFolderName = "";
 
 	static public void listFilesForFolder(File folder) {
@@ -63,23 +62,17 @@ class FileMethods{
 			mainFolderName = folder.getName();
 		}
 		
-//		uniqueAmount = 0;
-		
 	    for (File fileEntry : folder.listFiles()) {
 	        if (fileEntry.isDirectory()) {
 	            listFilesForFolder(fileEntry);
 	        } else {
 	        	amount++;
-//	        	uniqueAmount++;
 	        }
 	        
 	    }
 	    if(folder.getName().equals(mainFolderName)) {
         	System.out.println("Folder " + mainFolderName + " have: " + amount + " files");
         }
-//	    else {
-//	    	System.out.println("Folder " + folder.getName() + " have: " + uniqueAmount + " files");
-//	    }
 	}
 	
 	
